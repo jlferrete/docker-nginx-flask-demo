@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM python:3.5
 COPY setup.py /home/
 COPY app/* /home/
 WORKDIR /home
