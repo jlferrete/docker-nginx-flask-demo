@@ -1,5 +1,6 @@
 FROM python:3.9
 COPY setup.py /home/
+COPY database.db /home/
 COPY app/. /home/
 WORKDIR /home
 RUN pip3 install -e .
