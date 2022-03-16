@@ -12,7 +12,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <a class="navbar-brand" href="{{ url_for('index')}}">FlaskBlog</a>
+        <a class="navbar-brand" href="#">FlaskBlog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,14 +25,9 @@
         </div>
     </nav>
     <div class="container">
-        <h1>{% block title %} Welcome to FlaskBlog {% endblock %}</h1>
-        {% for post in posts %}
-            <a href="/{{ post['id'] }}">
-                <h2>{{ post['title'] }}</h2>
-            </a>
-            <span class="badge badge-primary">{{ post['created'] }}</span>
-            <hr>
-        {% endfor %}
+        <h2>{% block title %} {{ post['title'] }} {% endblock %}</h2>
+        <span class="badge badge-primary">{{ post['created'] }}</span>
+        <p>{{ post['content'] }}</p>
     </div>
 
     <!-- Optional JavaScript -->
